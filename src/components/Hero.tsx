@@ -17,8 +17,8 @@ const Hero = () => {
               Monoblock <span className="text-blue-400">Valves</span>
             </h1>
             <p className="text-xl mb-8 text-gray-300 leading-relaxed">
-              High-performance hydraulic solutions engineered for precision and reliability. 
-              Our monoblock valves deliver exceptional control for your industrial applications.
+              Monoblock directional control valve is designed for high pressure 
+              hydraulic system such as drilling machine, sanitation, etc.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg rounded-lg transition-all duration-300 transform hover:scale-105">
@@ -34,9 +34,9 @@ const Hero = () => {
           <div className="relative">
             <div className="bg-gradient-to-br from-blue-500/20 to-transparent rounded-3xl p-8 backdrop-blur-sm border border-blue-500/30">
               <img 
-                src="/lovable-uploads/072b074a-dca0-415e-abb8-b3bb4fa5a472.png" 
+                src="/lovable-uploads/c074f675-77ff-4361-89c4-1ab38d7bac8c.png" 
                 alt="Monoblock Valves" 
-                className="w-full h-auto rounded-2xl shadow-2xl"
+                className="w-full h-auto rounded-2xl"
               />
             </div>
             {/* Floating Elements */}

@@ -4,80 +4,76 @@ import { Card, CardContent } from "@/components/ui/card";
 const ServicesCards = () => {
   const services = [
     {
-      icon: "🔧",
-      title: "Engineering",
-      description: "Custom hydraulic system design and engineering solutions tailored to your specific requirements.",
-      features: ["CAD Design", "System Analysis", "Performance Testing"]
+      icon: "/lovable-uploads/0efd5369-25ad-46b1-a075-b8492491427c.png",
+      title: "Durability",
+      description: "Components built to withstand extreme conditions and last longer."
     },
     {
-      icon: "⚙️",
-      title: "Manufacturing",
-      description: "Precision manufacturing with state-of-the-art equipment and quality control processes.",
-      features: ["CNC Machining", "Quality Control", "ISO Standards"]
+      icon: "/lovable-uploads/1c0de45c-89c0-4f24-9d9e-de79a2026fbb.png",
+      title: "Maximum performance",
+      description: "Maximum efficiency and power to take your machinery to the next level."
     },
     {
-      icon: "🛠️",
-      title: "Maintenance",
-      description: "Comprehensive maintenance and support services to keep your systems running optimally.",
-      features: ["24/7 Support", "Preventive Care", "Quick Response"]
-    },
-    {
-      icon: "📋",
-      title: "Consultation",
-      description: "Expert consultation to optimize your hydraulic systems for maximum efficiency and performance.",
-      features: ["System Audit", "Optimization", "Training"]
+      icon: "/lovable-uploads/53c627fc-bd28-47df-b1e6-2ff5eab9d3fb.png",
+      title: "Optimisation",
+      description: "Solutions that reduce waste and enhance your system's productivity."
     }
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-          <div>
-            <div className="inline-block bg-blue-100 text-blue-600 px-4 py-2 rounded-full text-sm font-semibold mb-4">
-              Our Services
+        {/* Header Section */}
+        <div className="text-center mb-16">
+          <div className="mb-8">
+            <div className="inline-block bg-blue-500 text-white px-6 py-2 rounded-full text-lg font-semibold mb-6">
+              Our
             </div>
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Providing Innovation in <span className="text-blue-600">Hydraulic Systems</span>
+            <h2 className="text-4xl font-bold text-gray-900 -mt-2">
+              services
             </h2>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              We deliver comprehensive hydraulic solutions from initial design to ongoing maintenance. 
-              Our expert team ensures your systems operate at peak performance with maximum reliability.
-            </p>
           </div>
-          <div className="relative">
-            <img 
-              src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop" 
-              alt="Hydraulic Systems"
-              className="rounded-2xl shadow-xl"
-            />
-            <div className="absolute -bottom-6 -left-6 bg-blue-600 text-white p-6 rounded-2xl shadow-xl">
-              <div className="text-3xl font-bold">15+</div>
-              <div className="text-sm">Years Experience</div>
-            </div>
+          
+          <div className="max-w-4xl mx-auto">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              Powering Innovation in Hydraulic Systems
+            </h3>
+            <p className="text-gray-600 leading-relaxed">
+              At King Hydraulics, we take hydraulic power to the next level with high-performance solutions for the most demanding applications. Driven by our unwavering commitment to quality, we provide hydraulic components designed to optimize efficiency, precision, and durability in the most demanding systems.
+            </p>
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Services Cards */}
+        <div className="grid md:grid-cols-3 gap-8 mb-16">
           {services.map((service, index) => (
-            <Card key={index} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg">
-              <CardContent className="p-8 text-center">
-                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                  {service.icon}
+            <Card key={index} className="bg-white shadow-sm border-0 text-center p-8">
+              <CardContent className="p-0">
+                <div className="mb-6">
+                  <img 
+                    src={service.icon} 
+                    alt={service.title}
+                    className="w-16 h-16 mx-auto"
+                  />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">{service.title}</h3>
-                <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
-                <div className="space-y-2">
-                  {service.features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center justify-center text-sm text-gray-500">
-                      <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-2"></div>
-                      {feature}
-                    </div>
-                  ))}
-                </div>
+                <p className="text-gray-600 leading-relaxed">{service.description}</p>
               </CardContent>
             </Card>
           ))}
+        </div>
+
+        {/* Bottom Section */}
+        <div className="text-center">
+          <h3 className="text-xl font-bold text-gray-900 mb-4">
+            Who we help
+          </h3>
+          <h4 className="text-2xl font-bold text-gray-900 mb-4">
+            Power and precision for every industry
+          </h4>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Our products are designed to suit the most diverse applications. Wherever there's a challenge, there's a hydraulic solution from King Hydraulics.
+          </p>
         </div>
       </div>
     </section>

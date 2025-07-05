@@ -38,9 +38,20 @@ const ProductCarousel = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + products.length) % products.length);
   };
 
-  const visibleProducts = 4;
-  const startIndex = Math.max(0, currentIndex - Math.floor(visibleProducts / 2));
-  const endIndex = Math.min(products.length, startIndex + visibleProducts);
+  // Calculate visible products based on current index
+  const getVisibleProducts = () => {
+    const visibleCount = 4;
+    const visible = [];
+    
+    for (let i = 0; i < visibleCount; i++) {
+      const index = (currentIndex + i) % products.length;
+      visible.push(products[index]);
+    }
+    
+    return visible;
+  };
+
+  const visibleProducts = getVisibleProducts();
 
   return (
     <section className="py-20 bg-gray-50">
@@ -48,12 +59,13 @@ const ProductCarousel = () => {
         <div className="text-center mb-16">
           <div className="flex justify-center items-center mb-4">
             <div className="flex space-x-1">
-              {[...Array(4)].map((_, i) => (
+              {products.map((_, i) => (
                 <div
                   key={i}
-                  className={`w-2 h-2 rounded-full ${
-                    i === 0 ? 'bg-blue-600' : 'bg-gray-300'
+                  className={`w-2 h-2 rounded-full cursor-pointer transition-colors ${
+                    i === currentIndex ? 'bg-blue-600' : 'bg-gray-300'
                   }`}
+                  onClick={() => setCurrentIndex(i)}
                 />
               ))}
             </div>
@@ -79,9 +91,9 @@ const ProductCarousel = () => {
           </button>
 
           {/* Products Grid */}
-          <div className="grid grid-cols-4 gap-6">
-            {products.map((product, index) => (
-              <div key={product.id} className="relative">
+          <div className="grid grid-cols-4 gap-6 transition-all duration-300 ease-in-out">
+            {visibleProducts.map((product, index) => (
+              <div key={`${product.id}-${currentIndex}-${index}`} className="relative">
                 <Card className="bg-white shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-200">
                   <CardContent className="p-4">
                     <div className="relative bg-gray-50 rounded-lg p-6 mb-3 min-h-[200px] flex items-center justify-center">
